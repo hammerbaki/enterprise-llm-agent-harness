@@ -4,27 +4,30 @@
 
 ## Roadmap / TODO
 
-**Phase 3 (the main research-defense item) is complete**, so the repository is at
-an arXiv (cs.AI)-safe state. The active path is now **finalizing the submission
-package**. Paid live-model experiments are **deferred** — the current results are
-sufficient for submission, and new models add cost and model-drift risk.
+This repository is the frozen reference implementation cited by the paper *From
+Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents*
+(arXiv, cs.AI). The dependency is one-way — the paper cites the code — and this
+snapshot is pinned and Zenodo-archived for reproducibility. The paper's headline
+evaluation, the enforcement-layer ablation (harness / prompt-only /
+external-guardrail on the same model, the paper's Table 8), is complete and
+drift-guarded against a committed artifact. The items below are optional
+repository hygiene and future work; refreshing the paid live-model panel is
+intentionally out of scope for this snapshot, whose committed results are
+self-contained.
 
-**1. Phase 3 — external-guardrail baseline — done (Table A5)**
+**1. Phase 3 — external-guardrail baseline — done (the paper's Table 8)**
 Quantifies what the code-owned harness changes *on the same model* vs. an unguarded
 prompt and a bolt-on guardrail. Design + scoring frozen in
 [`docs/phase3-guardrail-baseline-design.md`](docs/phase3-guardrail-baseline-design.md)
 / [`docs/phase3-guardrail-scoring-spec.md`](docs/phase3-guardrail-scoring-spec.md).
 - [x] Scoring spec; canonical detector module; external-guardrail wrapper + tests.
 - [x] Runner/scorer; 360 live runs (5 groups × {reference, adversarial} × 3 repeats × 3 conditions).
-- [x] Table A5 + committed artifact (`evals/results/guardrail-baseline.*.2026-06-24.json`),
+- [x] Table 8 + committed artifact (`evals/results/guardrail-baseline.*.2026-06-24.json`),
       re-scored from raw records by `compute-paper-stats.mjs`, drift-guarded by `validate:paper-stats`.
 
-**2. Finalize & submit (active)**
+**2. Remaining**
 - [ ] Re-pin the manuscript repo (`harness-paper`, `artifacts/dev-pin.txt`) to the
-      latest tag and regenerate its tables (`build-tables.mjs`).
-- [ ] Integrate Table A5 + a Phase-3 paragraph into the manuscript — scope-limited
-      claims ("for this deterministic external-guardrail baseline…"; reader-facing
-      contract-violation reduction, not investment quality).
+      latest tag and Zenodo version DOI.
 - [ ] Final consistency pass: figures, captions, artifact hashes, README badge + version.
 - [ ] arXiv source-bundle dry-run → submit; add the arXiv ID here and in `CITATION.cff`.
 
@@ -141,7 +144,8 @@ The runtime flow — answer plan → traced tool fetches → source-backed claim
 composition, with the three enforcement conditions (harness / prompt-only /
 external-guardrail) and the three validation families — is drawn (diagram-as-code)
 in [`docs/architecture-flow.md`](docs/architecture-flow.md)
-([`.mmd`](docs/architecture-flow.mmd) source); it is the structure behind Table A5.
+([`.mmd`](docs/architecture-flow.mmd) source); it is the structure behind the
+paper's Table 8.
 
 ## Related manuscript
 
