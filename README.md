@@ -162,12 +162,12 @@ If you cite this repository:
 
 ```bibtex
 @misc{ahn2026harness,
-  author = {Ahn, Joongho and Kim, Moonsoo},
+  author = {Ahn, Joongho},
   title  = {enterprise-llm-agent-harness},
   year   = {2026},
   url    = {https://github.com/hammerbaki/enterprise-llm-agent-harness},
-  doi    = {10.5281/zenodo.20685423},
-  note   = {Version public-baseline-v0.5.16.3}
+  doi    = {10.5281/zenodo.20677471},
+  note   = {Version public-baseline-v0.5.16.4}
 }
 ```
 
