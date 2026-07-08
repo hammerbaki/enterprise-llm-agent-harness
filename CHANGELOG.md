@@ -4,16 +4,15 @@
 
 ## public-baseline-v0.5.16.4 - 2026-07-09
 
-Authorship correction (metadata only; no code, data, or evaluation artifacts changed).
+Repository finalized for publication (documentation and metadata only; no code,
+data, or evaluation artifacts changed).
 
-- CITATION.cff, LICENSE, LICENSE-DATA, README.md: sole author and copyright holder
-  Joongho Ahn (AI Leadership Research Center), matching the repository commit history.
-  Software-artifact attribution is now single-author; paper co-authorship is unaffected.
-- CITATION.cff now cites the Zenodo concept DOI (10.5281/zenodo.20677471), which always
-  resolves to the latest archived version; the per-version DOI is recorded in the paper.
-- No files under src/, server/, scripts/, tests/, evals/, raw/, configs/, prompts/, or
-  wiki/ changed; guardrail and evaluation artifacts are byte-identical to
-  public-baseline-v0.5.16.3.
+- README: removed the internal development roadmap/TODO so the landing page
+  describes the released artifact, and corrected the accompanying-manuscript title.
+- Finalized citation, license, and version metadata; CITATION.cff now uses the
+  Zenodo concept DOI (10.5281/zenodo.20677471), which resolves to the latest
+  archived version.
+- Guardrail and evaluation artifacts are byte-identical to public-baseline-v0.5.16.3.
 
 ## public-baseline-v0.5.16.3 - 2026-06-24
 
