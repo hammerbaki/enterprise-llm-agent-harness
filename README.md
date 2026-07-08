@@ -2,47 +2,6 @@
 
 [![CI](https://github.com/hammerbaki/enterprise-llm-agent-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/hammerbaki/enterprise-llm-agent-harness/actions/workflows/ci.yml)
 
-## Roadmap / TODO
-
-This repository is the frozen reference implementation cited by the paper *From
-Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents*
-(arXiv, cs.AI). The dependency is one-way — the paper cites the code — and this
-snapshot is pinned and Zenodo-archived for reproducibility. The paper's headline
-evaluation, the enforcement-layer ablation (harness / prompt-only /
-external-guardrail on the same model, the paper's Table 8), is complete and
-drift-guarded against a committed artifact. The items below are optional
-repository hygiene and future work; refreshing the paid live-model panel is
-intentionally out of scope for this snapshot, whose committed results are
-self-contained.
-
-**1. Phase 3 — external-guardrail baseline — done (the paper's Table 8)**
-Quantifies what the code-owned harness changes *on the same model* vs. an unguarded
-prompt and a bolt-on guardrail. Design + scoring frozen in
-[`docs/phase3-guardrail-baseline-design.md`](docs/phase3-guardrail-baseline-design.md)
-/ [`docs/phase3-guardrail-scoring-spec.md`](docs/phase3-guardrail-scoring-spec.md).
-- [x] Scoring spec; canonical detector module; external-guardrail wrapper + tests.
-- [x] Runner/scorer; 360 live runs (5 groups × {reference, adversarial} × 3 repeats × 3 conditions).
-- [x] Table 8 + committed artifact (`evals/results/guardrail-baseline.*.2026-06-24.json`),
-      re-scored from raw records by `compute-paper-stats.mjs`, drift-guarded by `validate:paper-stats`.
-
-**2. Remaining**
-- [ ] Re-pin the manuscript repo (`harness-paper`, `artifacts/dev-pin.txt`) to the
-      latest tag and Zenodo version DOI.
-- [ ] Final consistency pass: figures, captions, artifact hashes, README badge + version.
-- [ ] arXiv source-bundle dry-run → submit; add the arXiv ID here and in `CITATION.cff`.
-
-**3. Optional hygiene (low priority; before or after submission)**
-- [ ] `CONTRIBUTING.md` + a short threat-model note (leakage / recommendation paths).
-- [ ] Resolve the remaining `npm audit` low (esbuild, Windows dev server only).
-- [ ] One end-to-end reproducible promotion example from a public/synthetic source.
-- [ ] Capture latency on fixed hardware (or demote it to a non-headline reference).
-
-**4. Deferred / future work (post-submission)**
-- [ ] Refresh the live-LLM panel with current models (Claude Opus 4.x / Fable 5),
-      more repeats — **deferred**: current results are submission-safe; new paid runs
-      add cost and drift risk.
-- [ ] Reduce the maturity asymmetry — expand another group to a full reference slice.
-
 Mobile briefing tool for Korea's five largest corporate groups: Samsung, SK,
 Hyundai Motor, LG, and Hanwha. The app produces a short, source-linked briefing
 per company from public filings (DART), market data (KRX), and news: financial
@@ -149,7 +108,7 @@ paper's Table 8.
 
 ## Related manuscript
 
-An accompanying manuscript, *Beyond Prompting: Harness Engineering for
+An accompanying manuscript, *From Prompts to Contracts: Harness Engineering for Auditable
 Enterprise LLM Agents* (targeting arXiv, cs.AI), uses this repository's
 source-to-claim pipeline, validation scenarios, fault-injection results, and
 latency measurements. Until a public preprint is available, cite this repository
